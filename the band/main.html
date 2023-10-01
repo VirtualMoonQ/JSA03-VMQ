@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="dropdown.css">
+  <link rel="stylesheet" href="searchbutton.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #band {
+      height: 600px;
+      background-color: yellow;
+    }
+
+    #tour {
+      height: 600px;
+      background-color: rgb(0, 200, 255);
+    }
+
+    #contact {
+      height: 600px;
+      background-color: rgb(0, 255, 30);
+    }
+
+    @media only screen and (max-width: 600px) {
+      .dropdown {
+          display: none;
+      }
+
+      .topnav a {
+      display: none;
+      }
+
+      .sb {
+        display: none;
+      }
+
+      .menubttn {
+        display: inline-block;
+      }
+
+      #homie {
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ----------Navigation Bar------------ -->
+<div class="topnav">
+  <a href="#" id="homie">HOME</a>
+  <a href="#band">BAND</a>
+  <a href="#tour">TOUR</a>
+  <a href="#contact">CONTACT</a>
+  <div class="dropdown">
+    <button class="dropbtn">MORE
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Merchandise</a>
+      <a href="#">Extras</a>
+      <a href="#">Media</a>
+    </div>
+  </div>
+  <div class="sb"><i class="fa fa-search"></i></div>
+  <!--------------------Menufack----------------->
+  <button class="menubttn" onclick="show_menu()">
+    <i class="fa fa-bars"></i>
+  </button>
+</div>
+
+<div id="menu-contentt" class="menu-content">
+  <a href="#band">BAND</a>
+  <a href="#tour">TOUR</a>
+  <a href="#contact">CONTACT</a>
+  <a href="#">MERCH</a>
+</div>
+
+<script>
+  function show_menu() {
+    document.getElementById("menu-contentt").classList.toggle("show")
+  }
+</script>
+
+<!-- ---------------HOME--------------- -->
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <img src="images/blue.jpg">
+    <div class="text">
+      <h1>Blue</h1>
+      <h2>Somewhere on Earth</h2>
+    </div>
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="images/red.jpg">
+    <div class="text">
+      <h1>Red</h1>
+      <h2>Behind you</h2>
+    </div>
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="images/Paragon_(band)_-_Börsencrash_Festival_Wuppertal_2016-AL1745.jpg">
+    <div class="text">
+      <h1>Purple</h1>
+      <h2>Outside your window</h2>
+    </div>
+  </div>
+  
+</div>
+
+<br>
+  
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
+
+<!-- --------------BAND------------------- -->
+<div class = "main" id = "band">
+  <h1>Band</h1>
+</div>
+
+<!-- ---------------TOUR------------------- -->
+<div class = "main" id = "tour">
+  <h1>Tour</h1>
+</div>
+
+<!-- --------------CONTACT---------------- -->
+<div class = "main" id = "contact">
+  <h1>Contact</h1>
+</div>
+
+</body>
+</html>

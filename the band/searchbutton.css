@@ -1,0 +1,15 @@
+/*------------Search Button---------------*/
+.sb {
+    text-align: center;
+    width: 50px;
+    padding: 13.5px;
+    color: white;
+    background-color: black;
+    position: relative;
+    float: right;
+}
+
+.sb:hover {
+    background-color: rgb(255, 58, 58);
+    cursor: pointer;
+}
